@@ -4,12 +4,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./screens/HomeScreen";
-import CartScreen from "./screens/CartScreen";
 import ProfileScreen from "./screens/ProfieScreen";
+import { useSelector } from "react-redux";
+import BuyProductStack from "./BuyProductStack";
 
 const Tab = createBottomTabNavigator();
 
 const NavigationMenu = () => {
+  const { cartItems } = useSelector((state) => state.cart);
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -45,8 +48,12 @@ const NavigationMenu = () => {
         />
         <Tab.Screen
           name="My Cart"
-          component={CartScreen}
-          options={{ headerShown: false }}
+          component={BuyProductStack}
+          options={{
+            headerShown: false,
+            ...(cartItems.length && { tabBarBadge: cartItems.length }),
+            tabBarBadgeStyle: { marginTop: -6 },
+          }}
         />
         <Tab.Screen
           name="My Profile"

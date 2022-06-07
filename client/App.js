@@ -6,6 +6,7 @@ import { store } from "./src/store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import NavigationMenu from "./src/navigation/NavigationMenu";
+import "react-native-gesture-handler";
 
 export default function App() {
   const [signedin, setSignedin] = useState(false);

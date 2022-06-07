@@ -1,11 +1,9 @@
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useDispatch } from "react-redux";
-import { deleteProduct } from "../reducers/productReducer";
+import Counter from "./Counter";
 
-const Product = ({ product, navigation }) => {
-  const dispatch = useDispatch();
+const Product = ({ product }) => {
   return (
     <View style={styles.card}>
       <Image
@@ -41,6 +39,7 @@ const Product = ({ product, navigation }) => {
           <Text style={styles.subText}>Category : {product.category}</Text>
           <Text style={styles.price}>&#8377; {product.price}</Text>
         </View>
+        <Counter product={product} />
       </View>
     </View>
   );
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
   price: { fontSize: "1.2rem", fontWeight: "bold" },
   subText: {
     fontSize: "1rem",
-    fontWeight: "500",
+    fontWeight: "700",
   },
   rating: {
     display: "flex",
