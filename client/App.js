@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Auth from "./src/components/Auth";
 import { Provider } from "react-redux";
 import { store } from "./src/store";

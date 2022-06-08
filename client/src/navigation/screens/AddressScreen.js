@@ -5,6 +5,7 @@ const AddressScreen = ({ navigation }) => {
   return (
     <View>
       <Text>AddressScreen</Text>
+
       <Button
         title="next"
         onPress={() => {

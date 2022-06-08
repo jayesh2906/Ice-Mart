@@ -12,13 +12,15 @@ const BuyProductStack = () => {
       screenOptions={{
         headerStyle: {
           backgroundColor: "#0275d8",
+          height: 50,
         },
         headerTitleAlign: "center",
         headerTintColor: "white",
         headerTitleStyle: {
-          fontSize: "1.5rem",
+          fontSize: "1.2rem",
         },
       }}
+      initialRouteName="Address"
     >
       <Stack.Screen
         name="Cart"
@@ -31,7 +33,7 @@ const BuyProductStack = () => {
         name="Address"
         component={AddressScreen}
         options={{
-          headerTitle: "Your Address",
+          headerTitle: "Choose delivey location",
         }}
       />
       <Stack.Screen
@@ -46,7 +48,7 @@ const BuyProductStack = () => {
         component={ThankYouScreen}
         options={{
           headerTitle: "",
-          headerShown: false,
+          // headerShown: false,
         }}
       />
     </Stack.Navigator>

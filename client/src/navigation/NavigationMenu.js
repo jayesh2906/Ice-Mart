@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  getFocusedRouteNameFromRoute,
+} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "./screens/HomeScreen";
@@ -49,11 +52,14 @@ const NavigationMenu = () => {
         <Tab.Screen
           name="My Cart"
           component={BuyProductStack}
-          options={{
+          options={({ route }) => ({
             headerShown: false,
             ...(cartItems.length && { tabBarBadge: cartItems.length }),
             tabBarBadgeStyle: { marginTop: -6 },
-          }}
+            tabBarStyle: {
+              display: getTabBarVisibility(route),
+            },
+          })}
         />
         <Tab.Screen
           name="My Profile"
@@ -63,6 +69,20 @@ const NavigationMenu = () => {
       </Tab.Navigator>
     </NavigationContainer>
   );
+};
+
+const getTabBarVisibility = (route) => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
+
+  if (
+    routeName === "Address" ||
+    routeName === "Payment" ||
+    routeName === "ThankYou"
+  ) {
+    return "none";
+  } else {
+    return "flex";
+  }
 };
 
 export default NavigationMenu;
