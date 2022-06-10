@@ -15,7 +15,6 @@ import { addItemToCart, removeItemToCart } from "../../reducers/cartReducer";
 const CartScreen = ({ navigation }) => {
   const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  console.log("cartItems", cartItems);
 
   const Counter = ({ item }) => {
     return (

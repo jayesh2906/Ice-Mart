@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Auth = ({ setSignedin }) => {
   const [email, setEmails] = useState("");
+  const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useState("signin");
 
@@ -27,7 +28,7 @@ const Auth = ({ setSignedin }) => {
     if (auth === "signin") {
       dispatch(signinUser({ email, password }));
     } else {
-      dispatch(signupUser({ email, password }));
+      dispatch(signupUser({ email, password, mobile }));
     }
   };
 
@@ -46,6 +47,16 @@ const Auth = ({ setSignedin }) => {
       <Text style={styles.heading}>User App</Text>
       <ActivityIndicator animating={loading} size="large" color="white" />
       <Text style={styles.error}>{error}</Text>
+
+      {auth !== "signin" && (
+        <TextInput
+          placeholder="Enter Mobile No..."
+          style={styles.input}
+          maxLength={10}
+          keyboardType="numeric"
+          onChangeText={(value) => setMobile(value)}
+        />
+      )}
 
       <TextInput
         placeholder="Enter Email..."

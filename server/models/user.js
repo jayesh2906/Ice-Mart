@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+  mobile: {
+    type: Number,
+  },
   email: {
     type: String,
     required: true,

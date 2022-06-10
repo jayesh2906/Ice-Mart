@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import userRouter from "./routes/user.js";
 import productRouter from "./routes/product.js";
+import orderRouter from "./routes/order.js";
 import mongoose from "mongoose";
 import "dotenv/config";
 
@@ -12,6 +13,7 @@ app.use(express.urlencoded({ limit: "50mb" }));
 
 app.use("/user", userRouter);
 app.use("/product", productRouter);
+app.use("/order", orderRouter);
 
 mongoose
   .connect(process.env.MONGOURI, {

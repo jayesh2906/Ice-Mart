@@ -6,7 +6,7 @@ import "dotenv/config";
 const JWT_SECRET = process.env.JWT_SECRET;
 
 export const signup = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, mobile, password } = req.body;
   try {
     if (!email || !password) {
       return res.status(422).json({ error: "Please add all the fields!" });
@@ -20,6 +20,7 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 12);
     await new User({
       email,
+      mobile,
       password: hashedPassword,
     }).save();
     res.status(200).json({ message: "Signup success, You can login now!" });
@@ -55,7 +56,12 @@ export const signin = async (req, res) => {
     const doMatch = await bcrypt.compare(password, user.password);
     if (doMatch) {
       const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-      res.status(201).json({ token, email: user.email, userId: user._id });
+      res.status(201).json({
+        token,
+        email: user.email,
+        userId: user._id,
+        ...(user.mobile && { mobile: user.mobile }),
+      });
     } else {
       return res.status(401).json({ error: "Email or password is invalid!" });
     }

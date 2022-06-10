@@ -8,6 +8,7 @@ const initialState = {
   error: "",
   email: "",
   userId: "",
+  mobile: "",
 };
 
 export const signupUser = createAsyncThunk("signupuser", async (body) => {
@@ -41,7 +42,7 @@ const authReducer = createSlice({
     },
     [signinUser.fulfilled]: (
       state,
-      { payload: { error, token, email, userId } }
+      { payload: { error, token, email, userId, mobile } }
     ) => {
       state.loading = false;
       if (error) {
@@ -50,6 +51,7 @@ const authReducer = createSlice({
         state.email = email;
         state.token = token;
         state.userId = userId;
+        state.mobile = mobile;
         AsyncStorage.setItem("token", token);
         state.error = "";
       }

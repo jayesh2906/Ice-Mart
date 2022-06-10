@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   GoogleMap,
@@ -16,11 +17,12 @@ import {
   InfoWindow,
 } from "react-google-maps";
 import ModalComp from "../../components/ModalComp";
-import { useSelector } from "react-redux";
+import { addOrder } from "../../reducers/orderReducer";
 
 const AddressScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-  const { userId } = useSelector((state) => state.user);
+  const { userId, mobile } = useSelector((state) => state.user);
 
   const [userAddress, setUserAddress] = useState({
     fullName: "",
@@ -77,16 +79,21 @@ const AddressScreen = ({ navigation }) => {
       setErrorMssg("All fields are required");
       return;
     }
+    let updatedCartItems = cartItems.map((item) => {
+      const { name, quantity, image, price, productId } = item;
+      return { name, quantity, image, price, productId };
+    });
     const orderDetails = {
-      orderItems: [...cartItems],
-      orderAddress: {
+      orderItems: [...updatedCartItems],
+      userAddress: {
         ...userAddress,
+        mobile,
       },
       totalPrice: getTotalPrice(cartItems),
       userId,
     };
-
     console.log(orderDetails);
+    dispatch(addOrder(orderDetails));
     navigation.navigate("Payment");
     setShowAddressForm(false);
   };

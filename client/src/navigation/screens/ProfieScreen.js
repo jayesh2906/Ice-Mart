@@ -6,19 +6,22 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ProfileScreen = () => {
-  const { email } = useSelector((state) => state.user);
+  const { email, mobile } = useSelector((state) => state.user);
 
   return (
     <View style={styles.container}>
       <View style={styles.profileInfo}>
         <View style={styles.profile}>
           <Ionicons
-            style={{ fontSize: "3rem" }}
+            style={{ fontSize: "3.2rem" }}
             name="person-circle-outline"
             size="large"
             color="#0275d8"
           />
-          <Text style={styles.emailStyle}>{email || "user@gmail.com"}</Text>
+          <View>
+            <Text style={styles.emailStyle}>{email || "jc"}</Text>
+            <Text>{mobile || "7564728939"}</Text>
+          </View>
         </View>
         <TouchableOpacity
           onPress={() => {
@@ -58,6 +61,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     flexBasis: "80%",
+    gap: 5,
   },
   emailStyle: {
     fontSize: "1.4rem",
