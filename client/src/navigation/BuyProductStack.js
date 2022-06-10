@@ -20,7 +20,7 @@ const BuyProductStack = () => {
           fontSize: "1.2rem",
         },
       }}
-      initialRouteName="Address"
+      // initialRouteName="Address"
     >
       <Stack.Screen
         name="Cart"

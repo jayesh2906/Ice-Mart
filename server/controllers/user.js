@@ -55,7 +55,7 @@ export const signin = async (req, res) => {
     const doMatch = await bcrypt.compare(password, user.password);
     if (doMatch) {
       const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-      res.status(201).json({ token, email: user.email });
+      res.status(201).json({ token, email: user.email, userId: user._id });
     } else {
       return res.status(401).json({ error: "Email or password is invalid!" });
     }

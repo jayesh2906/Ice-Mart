@@ -7,6 +7,7 @@ const initialState = {
   loading: false,
   error: "",
   email: "",
+  userId: "",
 };
 
 export const signupUser = createAsyncThunk("signupuser", async (body) => {
@@ -38,13 +39,17 @@ const authReducer = createSlice({
     [signinUser.pending]: (state, action) => {
       state.loading = true;
     },
-    [signinUser.fulfilled]: (state, { payload: { error, token, email } }) => {
+    [signinUser.fulfilled]: (
+      state,
+      { payload: { error, token, email, userId } }
+    ) => {
       state.loading = false;
       if (error) {
         state.error = error;
       } else {
         state.email = email;
         state.token = token;
+        state.userId = userId;
         AsyncStorage.setItem("token", token);
         state.error = "";
       }
