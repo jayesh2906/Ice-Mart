@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { postApi } from "../helpers/api";
+import { postApi, getApi } from "../helpers/api";
 
 const initialState = {
   orders: {},
@@ -9,6 +9,11 @@ const initialState = {
 
 export const placeOrder = createAsyncThunk("placeorder", async (body) => {
   const result = await postApi("/order", body);
+  return result;
+});
+
+export const fetchOrders = createAsyncThunk("fetchorders", async (id) => {
+  const result = await getApi(`/order/${id}`);
   return result;
 });
 
@@ -29,6 +34,18 @@ const orderReducer = createSlice({
       if (error) {
         state.error = error;
       } else {
+        state.error = "";
+      }
+    },
+    [fetchOrders.pending]: (state) => {
+      state.loading = true;
+    },
+    [fetchOrders.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      if (payload?.error) {
+        state.error = payload?.error;
+      } else {
+        state.orders = [...payload];
         state.error = "";
       }
     },

@@ -36,9 +36,13 @@ const cartReducer = createSlice({
         )
         .filter((item) => item.quantity > 0);
     },
+    emptyCart: (state) => {
+      state.cartItems = [];
+    },
   },
   extraReducers: {},
 });
 
-export const { addItemToCart, removeItemToCart } = cartReducer.actions;
+export const { addItemToCart, removeItemToCart, emptyCart } =
+  cartReducer.actions;
 export default cartReducer.reducer;

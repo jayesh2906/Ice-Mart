@@ -53,6 +53,7 @@ const authReducer = createSlice({
         state.userId = userId;
         state.mobile = mobile;
         AsyncStorage.setItem("token", token);
+        AsyncStorage.setItem("userId", userId);
         state.error = "";
       }
     },

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import GooglePayButton from "@google-pay/button-react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { placeOrder } from "../../reducers/orderReducer";
+import { emptyCart } from "../../reducers/cartReducer";
 
 const PaymentScreen = ({ navigation }) => {
   const [paymentSuccess, setPaymentSuccess] = useState(false);
@@ -114,6 +115,7 @@ const PaymentScreen = ({ navigation }) => {
               onLoadPaymentData={(paymentRequest) => {
                 console.log("load payment data", paymentRequest);
                 dispatch(placeOrder(orders));
+                dispatch(emptyCart());
                 setPaymentSuccess(true);
               }}
               existingPaymentMethodRequired="false"

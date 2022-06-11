@@ -20,3 +20,12 @@ export const getOrders = async (req, res) => {
     res.status(404).json({ error: error.message });
   }
 };
+
+export const getUserOrders = async (req, res) => {
+  try {
+    const Orders = await Order.find({ userId: req.params.id });
+    res.status(200).json(Orders);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+};

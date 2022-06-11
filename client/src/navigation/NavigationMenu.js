@@ -57,6 +57,9 @@ const NavigationMenu = () => {
             ...(cartItems.length && { tabBarBadge: cartItems.length }),
             tabBarBadgeStyle: { marginTop: -6 },
             tabBarStyle: {
+              paddingTop: 10,
+              height: 60,
+              backgroundColor: "#F5FFFA",
               display: getTabBarVisibility(route),
             },
           })}
