@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const ProfileScreen = () => {
   const { email, mobile } = useSelector((state) => state.user);
-
+  const { orders } = useSelector((state) => state.order);
   return (
     <View style={styles.container}>
       <View style={styles.profileInfo}>
@@ -19,8 +19,8 @@ const ProfileScreen = () => {
             color="#0275d8"
           />
           <View>
-            <Text style={styles.emailStyle}>{email || "jc"}</Text>
-            <Text>{mobile || "7564728939"}</Text>
+            <Text style={styles.emailStyle}>{email}</Text>
+            <Text>{mobile}</Text>
           </View>
         </View>
         <TouchableOpacity

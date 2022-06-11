@@ -2,7 +2,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import AddressScreen from "./screens/AddressScreen";
 import CartScreen from "./screens/CartScreen";
 import PaymentScreen from "./screens/PaymentScreen";
-import ThankYouScreen from "./screens/ThankYouScreen";
 
 const Stack = createStackNavigator();
 
@@ -20,7 +19,6 @@ const BuyProductStack = () => {
           fontSize: "1.2rem",
         },
       }}
-      initialRouteName="Payment"
     >
       <Stack.Screen
         name="Cart"
@@ -41,14 +39,6 @@ const BuyProductStack = () => {
         component={PaymentScreen}
         options={{
           headerTitle: "Payment Details",
-        }}
-      />
-      <Stack.Screen
-        name="ThankYou"
-        component={ThankYouScreen}
-        options={{
-          headerTitle: "",
-          // headerShown: false,
         }}
       />
     </Stack.Navigator>
