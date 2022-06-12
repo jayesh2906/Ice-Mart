@@ -27,8 +27,8 @@ products and order the products according to their own needs. He can view his pr
 * User can add products to the cart.
 * Used Google maps for auto filling shipping address of user.
 * Used Google pay payment gateway for demo virtual payment of orders.
-* Only logged-in(authorized) user can see his/her orders used jsonwebtoken for authorization.(middleWare for jwt token verification)
-* User can view his profile and order history
+* Only logged-in(authorized) user can see his/her orders used jsonwebtoken for authorization.(middleWare for jwt token verification).
+* User can view his profile and order history.
 
 ### Admin view
 * Admin can add, Edit, Delete his/her product(loggedin authorized).
