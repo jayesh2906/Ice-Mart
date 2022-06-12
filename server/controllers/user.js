@@ -30,8 +30,6 @@ export const signup = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
-  // admin@gmail.com
-  // admin@123
   const { email, password, isAdmin } = req.body;
   try {
     if (!email || !password) {

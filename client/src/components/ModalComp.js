@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, StyleSheet, Text, View } from "react-native";
+import { Modal, StyleSheet, View } from "react-native";
 
 const ModalComp = ({ children }) => {
   return (

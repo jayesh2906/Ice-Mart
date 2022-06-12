@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import React from "react";
 import {
   NavigationContainer,
@@ -77,11 +76,7 @@ const NavigationMenu = () => {
 const getTabBarVisibility = (route) => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
 
-  if (
-    routeName === "Address" ||
-    routeName === "Payment" ||
-    routeName === "ThankYou"
-  ) {
+  if (routeName === "Address" || routeName === "Payment") {
     return "none";
   } else {
     return "flex";
@@ -89,5 +84,3 @@ const getTabBarVisibility = (route) => {
 };
 
 export default NavigationMenu;
-
-const styles = StyleSheet.create({});
