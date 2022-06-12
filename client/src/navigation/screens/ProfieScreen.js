@@ -51,12 +51,8 @@ const ProfileScreen = () => {
                 color="#0275d8"
               />
               <View>
-                <Text style={styles.emailStyle}>
-                  {email || "jayesh@gmail.com"}
-                </Text>
-                <Text style={{ fontSize: "1.1rem" }}>
-                  {mobile || 8329812727}
-                </Text>
+                <Text style={styles.emailStyle}>{email}</Text>
+                <Text style={{ fontSize: "1.1rem" }}>{mobile}</Text>
               </View>
             </View>
             <TouchableOpacity

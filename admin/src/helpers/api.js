@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// const url = "https://ice-mart.herokuapp.com";
-const url = "http://localhost:5000";
+const url = "https://ice-mart.herokuapp.com";
+// const url = "http://localhost:5000";
 
 const getApi = async (api) => {
   const res = await fetch(url + api, {

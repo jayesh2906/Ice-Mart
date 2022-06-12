@@ -106,9 +106,9 @@ const PaymentScreen = ({ navigation }) => {
                 transactionInfo: {
                   totalPriceStatus: "FINAL",
                   totalPriceLabel: "Total",
-                  totalPrice: "100.00",
-                  currencyCode: "USD",
-                  countryCode: "US",
+                  totalPrice: orders.totalPrice,
+                  currencyCode: "INR",
+                  countryCode: "IND",
                 },
                 shippingAddressRequired: false,
               }}

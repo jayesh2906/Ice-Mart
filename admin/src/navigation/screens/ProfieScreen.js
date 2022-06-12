@@ -42,9 +42,7 @@ const ProfileScreen = () => {
                 size="large"
                 color="tomato"
               />
-              <Text style={styles.emailStyle}>
-                {email || "admin@gmail.com"}
-              </Text>
+              <Text style={styles.emailStyle}>{email}</Text>
             </View>
             <TouchableOpacity
               onPress={() => {

@@ -100,7 +100,7 @@ const AddressScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={{ height: "92%" }}>
         <WrappedMap
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyD5wQzn5jaYJwfC-5gDxcZP-PQlVlCrk84"
+          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBczvQSZiS7rtneuvh8x8F9HLYnl6BCcj4"
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
