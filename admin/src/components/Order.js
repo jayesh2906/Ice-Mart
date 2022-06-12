@@ -27,11 +27,15 @@ const Order = ({ order }) => {
   return (
     <View key={order._id} style={styles.card}>
       <View>
-        <View style={{ marginBottom: 5, flexDirection: "row" }}>
+        <View style={{ marginBottom: 3, flexDirection: "row" }}>
           <Text style={[styles.subText, { fontWeight: "700" }]}>
             Order Id:{" "}
           </Text>
           <Text style={styles.subText}>{order._id}</Text>
+        </View>
+        <View style={{ marginBottom: 10, flexDirection: "row" }}>
+          <Text style={[styles.subText, { fontWeight: "700" }]}>User Id: </Text>
+          <Text style={styles.subText}>{order.userId}</Text>
         </View>
         <FlatList
           keyExtractor={(item) => item._id}

@@ -113,7 +113,6 @@ const PaymentScreen = ({ navigation }) => {
                 shippingAddressRequired: false,
               }}
               onLoadPaymentData={(paymentRequest) => {
-                console.log("load payment data", paymentRequest);
                 dispatch(placeOrder(orders));
                 dispatch(emptyCart());
                 setPaymentSuccess(true);

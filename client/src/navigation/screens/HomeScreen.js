@@ -33,11 +33,11 @@ const HomeScreen = ({ navigation }) => {
 
   const handleFilter = (category) => {
     if (category === "High Rating") {
-      dispatch(sortProducts({ key: "rating", order: "desc" }));
+      dispatch(sortProducts({ key: "rating", order: "asc" }));
     } else if (category === "Low to High Price") {
-      dispatch(sortProducts({ key: "price", order: "asc" }));
-    } else if (category === "High to Low Price") {
       dispatch(sortProducts({ key: "price", order: "desc" }));
+    } else if (category === "High to Low Price") {
+      dispatch(sortProducts({ key: "price", order: "asc" }));
     } else {
       dispatch(filterProducts(category));
     }
@@ -67,7 +67,7 @@ const HomeScreen = ({ navigation }) => {
             <FlatList
               keyExtractor={(item) => item._id}
               showsVerticalScrollIndicator={false}
-              data={products}
+              data={products?.slice().reverse()}
               renderItem={({ item }) => (
                 <Product product={item} navigation={navigation} />
               )}

@@ -33,7 +33,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       {error ? (
-        <Text style={styles.error}>Something Went Wrogn</Text>
+        <Text style={styles.error}>Something Went Wrong</Text>
       ) : (
         <React.Fragment>
           <ActivityIndicator

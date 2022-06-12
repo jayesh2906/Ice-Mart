@@ -92,7 +92,6 @@ const AddressScreen = ({ navigation }) => {
       totalPrice: getTotalPrice(cartItems),
       userId,
     };
-    console.log(orderDetails);
     dispatch(addOrder(orderDetails));
     navigation.navigate("Payment");
     setShowAddressForm(false);
