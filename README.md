@@ -1,5 +1,5 @@
 # Ice-Mart Mobile Application (MERNN Stack)
-## Overvie
+## Overview
 The “Ice Mart” is a mobile application written for Android operating systems, Designed to help users maintain and organize shop virtually.
 This application is easy to use for both beginners and advanced users. It features a familiar and well thoughtout, an attractive user interface, combined with strong searching Insertion.
 
