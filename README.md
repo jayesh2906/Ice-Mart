@@ -1,5 +1,6 @@
 # Ice-Mart Mobile Application (MERNN Stack)
-![image](https://user-images.githubusercontent.com/93786534/180216246-72b4dfaa-d23a-4920-90c9-6e6151775f76.png)
+![image](https://user-images.githubusercontent.com/93786534/180216527-caa4e52e-4ce6-4771-a377-993db5733fed.png)
+
 
 ## Overview
 The “Ice Mart” is a mobile application written for Android operating systems, Designed to help users maintain and organize shop virtually.
