@@ -16,6 +16,7 @@ products and order the products according to their own needs. He can view his pr
 
 ## Technologies used
 * React Natiive
+* Redux Thunk
 * Redux Toolkit
 * Node Js
 * Expess Js
