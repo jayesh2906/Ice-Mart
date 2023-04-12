@@ -15,7 +15,7 @@ The user can log in to the system by using his specific email and password. User
 products and order the products according to their own needs. He can view his profile and order history, User can find various product by using search option easily, User can also filter and Sort various products. 
 
 ## Technologies used
-* React Natiive
+* React Native
 * Redux Thunk
 * Redux Toolkit
 * Node Js
